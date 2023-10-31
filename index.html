@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>News homepage</title>
+
+</head>
+<body>
+  <nav>
+    <img src="./assets/images/logo.svg" alt="logo">
+    <img src="./assets/images/icon-menu.svg" alt="" id="menu-open">
+    <img src="./assets/images/icon-menu-close.svg" alt="" id="menu-close">
+    <div id="rectangle"  >
+    <ul id="ul">
+      <li class="nav-item" >Home</li>
+      <li class="nav-item">New</li>
+      <li class="nav-item">Popular</li>
+      <li class="nav-item">Trading </li>
+      <li class="nav-item">Categories</li>
+    </ul>
+  </div>
+  </nav>
+  <div class="main">
+    <div class="first">
+    <img src="./assets/images/image-web-3-desktop.jpg" alt="">
+    <img src="./assets/images/image-web-3-mobile.jpg" alt="">
+    <div class="second-section">
+      <div class="main-head">
+        <h1>
+        The Bright Future of Web 3.0?</h1>
+      </div>
+      <div class="main-content">
+        <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+          But is it really fulfilling its promise?</p>
+          <button>Read More</button>
+      </div>
+    </div>
+  </div>
+  <div class="black">
+    <h1>New </h1>
+    <div class="que-sec">
+      <h3 class="question">Hydrogen VS Electric Cars</h3>
+      <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+    </div>
+    <div class="que-sec">
+      <h3 class="question">The Downsides of AI Artistry</h3>
+      <p>What are the possible adverse effects of on-demand AI image generation?</p>
+    </div>
+    <div class="que-sec">
+      <h3 class="question">Is VC Funding Drying Up? </h3>
+      <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <section>
+      <img src="./assets/images/image-retro-pcs.jpg" alt="">
+      <div class="footer-content">
+        <h1>01</h1>
+        <div class="heading">Reviving Retro PCs</div>
+        <p>What happens when old PCs are given modern upgrades?</p>
+      </div>
+    </section>
+    <section>
+      <img src="./assets/images/image-top-laptops.jpg" alt="">
+      <div class="footer-content">
+        <h1>02</h1>
+        <div class="heading">Top 10 Laptops of 2022</div>
+        <p>Our best picks for various needs and budgets.</p>
+      </div>
+    </section>
+    <section>
+      <img src="./assets/images/image-gaming-growth.jpg" alt="">
+      <div class="footer-content">
+        <h1>03</h1>
+        <div class="heading">The Growth of Gaming</div>
+        <p>How the pandemic has sparked fresh opportunities.</p>
+      </div>
+    </section>
+  </div>
+
+  </div>
+  <script>
+    var ul = document.getElementById('ul');
+    var li = document.querySelectorAll('li');
+    var rectangle = document.getElementById('rectangle');
+    var close = document.getElementById('menu-close');
+    var open = document.getElementById('menu-open');
+
+    open.addEventListener('click', transitionMenu);
+    close.addEventListener('click', function(){
+      open.style.display='flex';
+      close.style.display='none'; 
+      close.style.zIndex=2;
+      rectangle.style.display='none'
+      rectangle.classList.remove('white-rect') ;
+      ul.classList.remove('nav-items');
+      li.forEach(function(item){
+        item.classList.remove('list-items');
+      });
+
+    });
+
+
+    function transitionMenu(){ 
+      open.style.display='none';
+      close.style.display='flex'; 
+      close.style.zIndex=2;
+      rectangle.style.display='block' 
+      rectangle.classList.add('white-rect') ;
+      ul.classList.add('nav-items');
+      li.forEach(function(item){
+        item.classList.add('list-items');
+      });
+      
+    }
+  </script>
+</body>
+</html>
+ 
+
